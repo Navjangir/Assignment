@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+from collections import Counter
+
+# Text provided (replace this with the actual text)
+text = """
+<The extensive text you provided>
+"""
+
+# Words related to flaws mentioned in the text
+flaws_words = ['RCT', 'AEFI', 'vaccine', 'Covid-19', 'hospitalization', 'conflict of interest', 'data discrepancy', 'age-group']
+
+# Lowercase the text for case-insensitive word counting
+lower_text = text.lower()
+
+# Count occurrences of each flaw-related word
+word_counts = Counter({word: lower_text.count(word.lower()) for word in flaws_words})
+
+# Create bar chart
+plt.figure(figsize=(10, 6))
+plt.bar(word_counts.keys(), word_counts.values())
+plt.xlabel('Flaws Mentioned')
+plt.ylabel('Frequency')
+plt.title('Frequency of Flaw-Related Words in the Critique')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
