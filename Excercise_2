@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Join Chain Form</title>
+</head>
+<body>
+  <h2>Join Chain Form</h2>
+  <form action="chain4childrenscheer.php" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thank You!</title>
+</head>
+<body>
+  <h2>Thank You for Joining!</h2>
+  <?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+
+    // Here, you could perform actions like saving to a database (not included here), sending emails, etc.
+    echo "Name: " . $name . "<br>";
+    echo "Email: " . $email . "<br>";
+  }
+  ?>
+</body>
+</html>
