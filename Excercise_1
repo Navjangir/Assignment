@@ -1,0 +1,34 @@
+import matplotlib.pyplot as plt
+
+# Pie chart data
+labels_pie = ['Pressure', 'Willing']
+sizes_pie = [106, 364]  # Taken from Table 3
+
+# Bar plot data
+categories_bar = ['Pressured', 'Willingly', 'Not Taken']
+non_student_adults = [28, 89, 5]  # From Table 1
+college_students = [78, 275, 8]  # From Table 2
+
+# Create a figure with two subplots
+fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+
+# Plot the pie chart
+axs[0].pie(sizes_pie, labels=labels_pie, autopct='%1.1f%%', startangle=140, colors=['skyblue', 'lightgreen'])
+axs[0].set_title('Percentage of Participants Pressured into Taking the Vaccine')
+
+# Plot the grouped bar plot
+x = range(len(categories_bar))
+axs[1].bar(x, non_student_adults, width=0.35, label='Non-Student Adults')
+axs[1].bar([i + 0.35 for i in x], college_students, width=0.35, label='College Students')
+axs[1].set_xlabel('Survey Responses')
+axs[1].set_ylabel('Frequency')
+axs[1].set_title('Survey Responses on Vaccine Coercion')
+axs[1].set_xticks([i + 0.175 for i in x])
+axs[1].set_xticklabels(categories_bar)
+axs[1].legend()
+
+# Adjust layout
+plt.tight_layout()
+
+# Show the plots
+plt.show()
