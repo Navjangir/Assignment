@@ -1,0 +1,17 @@
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+# Text provided
+text = """
+<The extensive text you provided>
+"""
+
+# Generate word cloud
+wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+
+# Display the word cloud using matplotlib
+plt.figure(figsize=(10, 8))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
+plt.title('Word Cloud of Critique on ICMR Study on Sudden Deaths')
+plt.show()
